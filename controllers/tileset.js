@@ -1,5 +1,20 @@
+const fs = require('fs')
 const path = require('path')
 const MBTiles = require('@mapbox/mbtiles')
+
+
+module.exports.list = (req, res, next) => {
+  const tilesetsDir = path.resolve('./data/tilesets')
+
+  fs.readdir(tilesetsDir, (err, files) => {
+    if (err) return next(err)
+
+    res.json(files
+      .filter(file => path.extname(file) === '.mbtiles')
+      .map(file => path.parse(file).name)
+    )
+  })
+}
 
 
 module.exports.getTileJSON = (req, res, next) => {
