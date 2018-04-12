@@ -5,8 +5,9 @@
   "bin": "./bin/www",
   "scripts": {
     "start": "node ./bin/www",
-    "lint": "eslint *.js --fix",
     "test": "npm run lint",
+    "lint": "eslint **/*.js",
+    "format": "prettier-eslint --write **/*.js",
     "pkg": "pkg . --out-path=dist/"
   },
   "engines": {
@@ -18,32 +19,30 @@
       "node_modules/@mapbox/glyph-pbf-composite/proto/glyphs.proto",
       "node_modules/mapnik/lib/binding/mapnik_settings.js"
     ],
-    "targets": [
-      "node6-macos-x64",
-      "node6-linux-x64",
-      "node6-win-x64"
-    ]
+    "targets": ["node6-macos-x64", "node6-linux-x64", "node6-win-x64"]
   },
   "dependencies": {
     "@mapbox/glyph-pbf-composite": "^0.0.3",
     "@mapbox/mbtiles": "^0.9.0",
     "@mapbox/spritezero": "^5.1.0",
     "async": "^2.6.0",
-    "body-parser": "^1.17.2",
     "compression": "^1.6.2",
-    "cookie-parser": "~1.4.3",
     "cors": "^2.8.1",
-    "debug": "^3.0.0",
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "helmet": "^3.1.0",
-    "method-override": "^2.3.7",
+    "http-errors": "^1.6.3",
     "mkdirp": "^0.5.1",
     "morgan": "^1.8.2",
     "multer": "^1.3.0",
     "rd": "^1.1.2"
   },
   "devDependencies": {
-    "eslint": "^4.14.0",
-    "pkg": "^4.3.0-beta.5"
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "pkg": "^4.3.1",
+    "prettier": "^1.11.1",
+    "prettier-eslint-cli": "^4.7.1"
   }
 }
