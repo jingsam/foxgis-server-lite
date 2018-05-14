@@ -6,34 +6,29 @@ A simple and fully functional vector tiles server
 ### Style API
 
 ```
-GET /api/v1/styles
-GET /api/v1/styles/{styleId}
-PUT /api/v1/styles/{styleId}
-DELETE /api/v1/styles/{styleId}
+GET /api/v1/styles/{owner}
+GET /api/v1/styles/{owner}/{styleId}
+GET /api/v1/styles/{owner}/{styleId}/html
 ```
 
 ### Tileset API
 
 ```
-GET /api/v1/tilesets
-GET /api/v1/tilesets/:tilesetId/{z}/{x}/{y}.(pbf|png)
-```
-
-### Font API
-
-```
-GET /api/v1/fonts
-GET /api/v1/fonts/{fontstack}/{start}-{end}.pbf
+GET /api/v1/tilesets/{owner}
+GET /api/v1/tilesets/{owner}/:tilesetId/tilejson
+GET /api/v1/tilesets/{owner}/:tilesetId/{z}/{x}/{y}.(pbf|png)
 ```
 
 ### Sprite API
 
 ```
-GET /api/v1/sprites
-PUT /api/v1/sprites/{spriteId}
-DELETE /api/v1/sprites/{spriteId}
-GET /api/v1/sprites/{spriteId}/icons/{icon}
-PUT /api/v1/sprites/{spriteId}/icons/{icon}
-DELETE /api/v1/sprites/{spriteId}/icons/{icon}
-GET /api/v1/sprites/{spriteId}/sprite(@[1-4]x).(json|png)
+GET /api/v1/sprites/{owner}
+GET /api/v1/sprites/{owner}/{spriteId}/sprite(@[1-4]x).(json|png)
+```
+
+### Font API
+
+```
+GET /api/v1/fonts/{owner}
+GET /api/v1/fonts/{owner}/{fontstack}/{start}-{end}.pbf
 ```

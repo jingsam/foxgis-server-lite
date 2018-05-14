@@ -1,6 +1,14 @@
 #!/usr/bin/env node
 
 /**
+ * Load and set default environment variables.
+ */
+
+require('dotenv').config();
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+process.env.PORT = process.env.PORT || '1234';
+
+/**
  * Module dependencies.
  */
 
@@ -11,7 +19,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '1234');
+var port = normalizePort(process.env.PORT);
 app.set('port', port);
 
 /**
