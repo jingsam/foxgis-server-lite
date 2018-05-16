@@ -20,11 +20,11 @@ app.use(express.json({ limit: '5mb' }))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static('public'))
 
-app.use(express.static(path.join(__dirname, '../assets')))
 app.set('views', path.join(__dirname, '../views'))
 app.set('view engine', 'hbs')
 
 app.use('/api/v1', routes)
+app.use('/api/v1/assets', express.static(path.join(__dirname, '../assets')))
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
