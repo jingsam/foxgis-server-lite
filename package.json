@@ -17,7 +17,9 @@
     "assets": [
       "node_modules/@mapbox/mbtiles/lib/schema.sql",
       "node_modules/@mapbox/glyph-pbf-composite/proto/glyphs.proto",
-      "node_modules/mapnik/lib/binding/mapnik_settings.js"
+      "node_modules/mapnik/lib/binding/mapnik_settings.js",
+      "views",
+      "assets"
     ],
     "targets": [
       "node6-macos-x64",
@@ -34,6 +36,7 @@
     "cors": "^2.8.1",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
+    "hbs": "^4.0.1",
     "helmet": "^3.1.0",
     "http-errors": "^1.6.3",
     "morgan": "^1.8.2",

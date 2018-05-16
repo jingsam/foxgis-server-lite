@@ -34,7 +34,7 @@ module.exports.getTileJSON = (req, res, next) => {
 
       const endpoint = `${req.protocol}://${req.headers.host}/api/v1`
       info.tiles = [
-        `${endpoint}/tilesets/${tilesetId}/{z}/{x}/{y}.${info.format}`
+        `${endpoint}/tilesets/${owner}/${tilesetId}/{z}/{x}/{y}.${info.format}`
       ]
       info.scheme = 'xyz'
 

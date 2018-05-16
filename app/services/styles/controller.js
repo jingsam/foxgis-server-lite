@@ -31,5 +31,8 @@ module.exports.get = (req, res, next) => {
 module.exports.getHTML = (req, res, next) => {
   const { owner, styleId } = req.params
 
-  res.json({})
+  const endpoint = `${req.protocol}://${req.headers.host}/api/v1`
+  const styleURL = `${endpoint}/styles/${owner}/${styleId}`
+
+  res.render('preview', { styleURL })
 }

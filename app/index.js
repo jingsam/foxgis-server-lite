@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 const compression = require('compression')
 const helmet = require('helmet')
@@ -18,6 +19,10 @@ app.use(compression())
 app.use(express.json({ limit: '5mb' }))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static('public'))
+
+app.use(express.static(path.join(__dirname, '../assets')))
+app.set('views', path.join(__dirname, '../views'))
+app.set('view engine', 'hbs')
 
 app.use('/api/v1', routes)
 
