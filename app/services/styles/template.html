@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= styleId %></title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <script src="/api/foxgis-server-assets/mapbox-gl.js"></script>
+  <link rel="stylesheet" href="/api/foxgis-server-assets/mapbox-gl.css">
+  <style>
+    html, body, #map {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script>
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: './',
+      attributionControl: false,
+      hash: true
+    })
+
+    map.addControl(new mapboxgl.NavigationControl())
+    map.addControl(new mapboxgl.FullscreenControl())
+    map.addControl(new mapboxgl.ScaleControl())
+  </script>
+</body>
+</html>

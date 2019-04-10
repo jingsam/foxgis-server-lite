@@ -1,8 +1,8 @@
 const router = require('express').Router()
-const controller = require('./controller')
+const styles = require('./controller')
 
-router.get('/styles/:owner', controller.list)
-router.get('/styles/:owner/:styleId', controller.get)
-router.get('/styles/:owner/:styleId/html', controller.getHTML)
+router.get('/styles', styles.list)
+router.get('/styles/:styleId', styles.get)
+router.get('/styles/:styleId/html', styles.getHtml)
 
 module.exports = router

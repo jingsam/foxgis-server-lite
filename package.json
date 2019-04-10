@@ -1,51 +1,58 @@
 {
   "name": "foxgis-server-lite",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "bin": "./bin/www",
   "scripts": {
     "start": "node ./bin/www",
+    "docs": "docsify serve ./docs --open",
     "test": "npm run lint",
     "lint": "eslint app/**/*.js",
     "format": "prettier-eslint --write app/**/*.js",
-    "pkg": "pkg . --out-path=dist/"
+    "dist": "pkg . --out-path=dist/ --targets=win,linux,macos"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "pkg": {
     "assets": [
-      "node_modules/@mapbox/mbtiles/lib/schema.sql",
       "node_modules/@mapbox/glyph-pbf-composite/proto/glyphs.proto",
-      "node_modules/mapnik/lib/binding/mapnik_settings.js",
-      "views",
-      "assets"
-    ],
-    "targets": [
-      "node6-macos-x64",
-      "node6-linux-x64",
-      "node6-win-x64"
+      "app/assets"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "app/**/*.js": [
+        "prettier-eslint",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "app/assets/**/*"
     ]
   },
   "dependencies": {
+    "@cgcs2000/mbtiles": "^0.10.3",
     "@mapbox/glyph-pbf-composite": "^0.0.3",
-    "@mapbox/mbtiles": "^0.9.0",
-    "@mapbox/spritezero": "^5.1.0",
-    "async": "^2.6.0",
     "compression": "^1.6.2",
+    "consolidate": "^0.15.1",
     "cors": "^2.8.1",
-    "dotenv": "^5.0.1",
+    "ejs": "^2.6.1",
     "express": "^4.16.2",
-    "hbs": "^4.0.1",
-    "helmet": "^3.1.0",
-    "http-errors": "^1.6.3",
-    "morgan": "^1.8.2",
-    "rd": "^1.1.2"
+    "morgan": "^1.8.2"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.0",
+    "docsify-cli": "^4.2.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^1.0.1",
+    "lint-staged": "^8.0.4",
     "pkg": "^4.3.1",
     "prettier": "^1.12.1",
     "prettier-eslint-cli": "^4.7.1"

@@ -1,0 +1,22 @@
+stages:
+  - test
+
+test:
+  stage: test
+  image: node:8-stretch
+  cache:
+    key: "$CI_COMMIT_REF_SLUG"
+    paths:
+      - node_modules
+  before_script:
+    - yarn
+  script:
+    - yarn test
+  after_script:
+    - yarn dist
+    - find node_modules -name "*.node" -exec cp {} dist/ \;
+    - cp -r data dist/
+    - cd dist && tar zcf ../foxgis-server-lite.tar.gz . && cd ../
+  artifacts:
+    paths:
+      - foxgis-server-lite.tar.gz

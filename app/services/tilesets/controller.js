@@ -1,67 +1,72 @@
 const fs = require('fs')
 const path = require('path')
-const MBTiles = require('@mapbox/mbtiles')
+const MBTiles = require('@cgcs2000/mbtiles')
 
 module.exports.list = (req, res, next) => {
-  const { owner } = req.params
-  const tilesetsDir = path.resolve(`./data/${owner}/tilesets`)
+  const tilesetsDir = path.resolve(`./data/tilesets`)
 
   fs.readdir(tilesetsDir, (err, files) => {
     if (err) return next(err)
 
     const tilesets = files
       .filter(file => path.extname(file) === '.mbtiles')
-      .map(file => {
-        return { tilesetId: path.parse(file).name, owner }
-      })
+      .map(file => path.parse(file).name)
 
     res.json(tilesets)
   })
 }
 
-module.exports.getTileJSON = (req, res, next) => {
-  const { owner, tilesetId } = req.params
-  const tilesetPath = path.resolve(
-    `./data/${owner}/tilesets/${tilesetId}.mbtiles`
-  )
+module.exports.getTilejson = (req, res, next) => {
+  const { tilesetId } = req.params
+  const tilesetsDir = path.resolve(`./data/tilesets`)
+  const source = `mbtiles://${tilesetsDir}/${tilesetId}.mbtiles?mode=ro`
 
-  new MBTiles(tilesetPath, (err, source) => {
+  new MBTiles(source, (err, source) => {
     if (err) return next(err)
 
     source.getInfo((err, info) => {
       source.close()
       if (err) return next(err)
 
-      const endpoint = `${req.protocol}://${req.headers.host}/api/v1`
-      info.tiles = [
-        `${endpoint}/tilesets/${owner}/${tilesetId}/{z}/{x}/{y}.${info.format}`
-      ]
+      const apiBaseUrl = `${req.protocol}://${req.headers.host}/api`
+      info.tiles = info.tiles
+        ? JSON.parse(info.tiles)
+        : [`${apiBaseUrl}/tilesets/v1/${owner}/${tilesetId}/{z}/{x}/{y}.${info.format}`]
       info.scheme = 'xyz'
+      info.type = ['pbf', 'mvt'].includes(info.format) ? 'vector' : 'raster'
+      if (info.tileSize) info.tileSize = +info.tileSize
+      if (info.zoomOffset) info.zoomOffset = +info.zoomOffset
 
       res.json(info)
     })
   })
 }
 
-module.exports.getTile = (req, res, next) => {
-  const { owner, tilesetId, z, x, y } = req.params
-  const tilesetPath = path.resolve(
-    `./data/${owner}/tilesets/${tilesetId}.mbtiles`
-  )
+module.exports.getHtml = (req, res, next) => {
+  const { tilesetId } = req.params
 
-  new MBTiles(tilesetPath, (err, source) => {
+  consolidate.ejs(path.join(__dirname, './template.html'), { tilesetId }, (err, html) => {
+    if (err) return next(err)
+
+    res.send(html)
+  })
+}
+
+module.exports.getTile = (req, res, next) => {
+  const { tilesetId, z, x, y } = req.params
+  const tilesetsDir = path.resolve(`./data/tilesets`)
+  const source = `mbtiles://${tilesetsDir}/${tilesetId}.mbtiles?mode=ro`
+
+  new MBTiles(source, (err, source) => {
     if (err) return next(err)
 
     source.getTile(+z, +x, +y, (err, data, headers) => {
       source.close()
-
-      if (err && err.message.match(/(Tile|Grid) does not exist/))
-        return res.sendStatus(404)
+      if (err && err.message.match(/(Tile|Grid) does not exist/)) return res.sendStatus(404)
       if (err) return next(err)
       if (!data) return res.sendStatus(204)
 
       delete headers['ETag']
-
       res.set(headers)
       res.send(data)
     })

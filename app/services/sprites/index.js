@@ -1,7 +1,7 @@
 const router = require('express').Router()
-const controller = require('./controller')
+const sprites = require('./controller')
 
-router.get('/sprites/:owner', controller.list)
-router.get('/sprites/:owner/:spriteId/sprite:scale(@[1-4]x)?.:format(png|json)?', controller.getSprite) // prettier-ignore
+router.get('/sprites', sprites.list)
+router.get('/sprites/:spriteId/sprite:scale(@[1-4]x)?.:format(png|json)?', sprites.getSprite) // prettier-ignore
 
 module.exports = router

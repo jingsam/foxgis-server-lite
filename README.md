@@ -1,34 +1,36 @@
 # FoxGIS Server Lite
-A simple and fully functional vector tiles server
+
+> 一款简单实用的地图服务软件，支持Windows、Linux和macOS。
 
 ## API
 
 ### Style API
 
 ```
-GET /api/v1/styles/{owner}
-GET /api/v1/styles/{owner}/{styleId}
-GET /api/v1/styles/{owner}/{styleId}/html
+GET /api/styles
+GET /api/styles/{styleId}
+GET /api/styles/{styleId}/html
 ```
 
 ### Tileset API
 
 ```
-GET /api/v1/tilesets/{owner}
-GET /api/v1/tilesets/{owner}/:tilesetId/tilejson
-GET /api/v1/tilesets/{owner}/:tilesetId/{z}/{x}/{y}.(pbf|png)
+GET /api/tilesets
+GET /api/tilesets/:tilesetId/tilejson
+GET /api/tilesets/:tilesetId/html
+GET /api/tilesets/:tilesetId/{z}/{x}/{y}.{format}
 ```
 
 ### Sprite API
 
 ```
-GET /api/v1/sprites/{owner}
-GET /api/v1/sprites/{owner}/{spriteId}/sprite(@[1-4]x).(json|png)
+GET /api/sprites
+GET /api/sprites/{spriteId}/sprite(@[1-4]x).(json|png)
 ```
 
 ### Font API
 
 ```
-GET /api/v1/fonts/{owner}
-GET /api/v1/fonts/{owner}/{fontstack}/{start}-{end}.pbf
+GET /api/fonts
+GET /api/fonts/{fontIds}/{start}-{end}.pbf
 ```
