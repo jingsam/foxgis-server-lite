@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FoxGIS Server Lite</title>
+  <link rel="stylesheet" href="vendor/themes/vue.css">
+</head>
+<body>
+  <div id="app">载入中...</div>
+
+  <script>
+    window.$docsify = {
+      name: 'FoxGIS Server Lite',
+      subMaxLevel: 3,
+      loadSidebar: '_sidebar.md',
+      coverpage: '_coverpage.md',
+      autoHeader: true,
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '搜索',
+        noData: '找不到结果'
+      }
+    }
+  </script>
+  <script src="vendor/docsify.min.js"></script>
+  <script src="vendor/plugins/search.min.js"></script>
+  <script src="vendor/plugins/prism-json.min.js"></script>
+  <script src="vendor/plugins/prism-bash.min.js"></script>
+  <script src="vendor/plugins/docsify-copy-code.min.js"></script>
+</body>
+</html>
