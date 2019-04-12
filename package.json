@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "docs": "docsify serve ./docs --open",
-    "test": "npm run lint",
+    "test": "yarn lint",
     "lint": "eslint app/**/*.js",
     "format": "prettier-eslint --write app/**/*.js",
     "dist": "pkg . --out-path=dist/ --targets=win,linux,macos"
