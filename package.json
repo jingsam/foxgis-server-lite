@@ -7,7 +7,7 @@
     "start": "node ./bin/www",
     "docs": "docsify serve ./docs --open",
     "test": "yarn lint",
-    "lint": "eslint app/**/*.js",
+    "lint": "eslint --ext .js app/",
     "format": "prettier-eslint --write app/**/*.js",
     "dist": "pkg . --out-path=dist/ --targets=win,linux,macos"
   },
