@@ -18,13 +18,13 @@
 
 ```
 foxgis-server-lite-win/
-    |-- foxgis-server-lite-win.exe    // 主程序
-    |-- node_sqlite3.node             // node扩展，用于读取mbtiles
-    |-- data/                         // 数据文件夹
-        |-- styles/                   // 地图样式目录，存放样式json
-        |-- tilesets/                 // 地图瓦片目录，存放mbtiles
-        |-- sprites/                  // 符号库目录，存放sprite.json和sprite.png
-        |-- fonts/                    // 字体目录，存放字形文件pbf
+  |-- foxgis-server-lite-win.exe    // 主程序
+  |-- node_sqlite3.node             // node扩展，用于读取mbtiles
+  |-- data/                         // 数据文件夹
+      |-- styles/                   // 地图样式目录，存放样式json
+      |-- tilesets/                 // 地图瓦片目录，存放mbtiles
+      |-- sprites/                  // 符号库目录，存放sprite.json和sprite.png
+      |-- fonts/                    // 字体目录，存放字形文件pbf
 ```
 
 启动时，进入`foxgis-server-lite-win`文件夹，在命令行中执行：
