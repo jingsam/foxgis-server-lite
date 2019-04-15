@@ -35,6 +35,7 @@ test:
 pages:
   stage: pages
   script:
+    - mkdir public
     - mv docs foxgis-server-lite-win.gz foxgis-server-lite-linux.gz foxgis-server-lite-macos.gz public/
   artifacts:
     paths:
