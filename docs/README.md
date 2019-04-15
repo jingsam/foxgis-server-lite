@@ -17,7 +17,7 @@
 以Windows平台部署为例，解压部署包得到以下文件：
 
 ```
-|-- foxgis-server-lite-win/
+foxgis-server-lite-win/
     |-- foxgis-server-lite-win.exe    // 主程序
     |-- node_sqlite3.node             // node扩展，用于读取mbtiles
     |-- data/                         // 数据文件夹
