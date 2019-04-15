@@ -17,16 +17,17 @@
 以Windows平台部署为例，解压部署包得到以下文件：
 
 ```
-|-- foxgis-server-lite-win.exe    // 主程序
-|-- node_sqlite3.node             // node扩展，用于读取mbtiles
-|-- data                          // 数据文件夹
-    |-- styles                    // 地图样式目录，存放样式json
-    |-- tilesets                  // 地图瓦片目录，存放mbtiles
-    |-- sprites                   // 符号库目录，存放sprite.json和sprite.png
-    |-- fonts                     // 字体目录，存放字形文件pbf
+|-- foxgis-server-lite-win/
+    |-- foxgis-server-lite-win.exe    // 主程序
+    |-- node_sqlite3.node             // node扩展，用于读取mbtiles
+    |-- data/                         // 数据文件夹
+        |-- styles/                   // 地图样式目录，存放样式json
+        |-- tilesets/                 // 地图瓦片目录，存放mbtiles
+        |-- sprites/                  // 符号库目录，存放sprite.json和sprite.png
+        |-- fonts/                    // 字体目录，存放字形文件pbf
 ```
 
-启动时，只需在命令行中执行：
+启动时，进入`foxgis-server-lite-win`文件夹，在命令行中执行：
 
 ```
 ./foxgis-server-lite-win.exe
@@ -43,7 +44,7 @@ set PROT=8080 && ./foxgis-server-lite-win.exe
 
 ### 地图样式服务
 
-?> 地图样式服务以样式的文件名（不带后缀）作为`styleId`，地图样式文件存储在`data/styles`目录下，在该目录下进行地图样式的新增、修改和删除操作。地图样式文件的生成，可以使用FoxGIS Server配图后导出。
+?> 地图样式服务以样式的文件名（不带后缀）作为`styleId`，地图样式文件存储在`data/styles`目录下，在该目录下进行地图样式的新增、修改和删除操作。地图样式文件的生成，可以使用[FoxGIS Studio](https://www.foxgis.com/studio)配图后导出。
 
 ```
 GET /api/styles                                 // 获取样式列表
