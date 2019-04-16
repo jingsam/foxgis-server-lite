@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const consolidate = require('consolidate')
 
 module.exports.list = (req, res, next) => {
   const stylesDir = path.resolve(`./data/styles`)

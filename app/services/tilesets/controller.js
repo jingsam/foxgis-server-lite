@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const MBTiles = require('@cgcs2000/mbtiles')
+const consolidate = require('consolidate')
 
 module.exports.list = (req, res, next) => {
   const tilesetsDir = path.resolve(`./data/tilesets`)
@@ -31,7 +32,7 @@ module.exports.getTilejson = (req, res, next) => {
       const apiBaseUrl = `${req.protocol}://${req.headers.host}/api`
       info.tiles = info.tiles
         ? JSON.parse(info.tiles)
-        : [`${apiBaseUrl}/tilesets/v1/${owner}/${tilesetId}/{z}/{x}/{y}.${info.format}`]
+        : [`${apiBaseUrl}/tilesets/${tilesetId}/{z}/{x}/{y}.${info.format}`]
       info.scheme = 'xyz'
       info.type = ['pbf', 'mvt'].includes(info.format) ? 'vector' : 'raster'
       if (info.tileSize) info.tileSize = +info.tileSize

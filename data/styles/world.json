@@ -1,0 +1,17 @@
+{
+  "version": 8,
+  "sources": {
+    "admin": {
+      "type": "vector",
+      "url": "/api/tilesets/admin/tilejson"
+    }
+  },
+  "layers": [
+    {
+      "id": "admin",
+      "type": "line",
+      "source": "admin",
+      "source-layer": "admin"
+    }
+  ]
+}
