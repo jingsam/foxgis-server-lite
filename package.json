@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "docs": "docsify serve ./docs --open",
-    "test": "echo 0",
-    "lint": "eslint --ext .js app/",
+    "test": "tape test/**/*.js",
+    "lint": "eslint app/**/*.js",
     "format": "prettier-eslint --write app/**/*.js",
     "dist": "pkg . --out-path=dist/ --targets=win,linux,macos"
   },
@@ -55,6 +55,8 @@
     "lint-staged": "^8.0.4",
     "pkg": "^4.3.1",
     "prettier": "^1.12.1",
-    "prettier-eslint-cli": "^4.7.1"
+    "prettier-eslint-cli": "^4.7.1",
+    "supertest": "^4.0.2",
+    "tape": "^4.10.1"
   }
 }
