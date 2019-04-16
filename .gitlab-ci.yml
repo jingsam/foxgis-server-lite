@@ -9,6 +9,7 @@ test:
     key: "$CI_COMMIT_REF_SLUG"
     paths:
       - node_modules
+      - ~/.pkg-cache
   before_script:
     - yarn
   script:
