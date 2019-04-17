@@ -67,7 +67,7 @@ GET /api/tilesets/:tilesetId/{z}/{x}/{y}.{format} // 获取瓦片
 
 ```
 GET /api/sprites                                        // 获取符号库列表
-GET /api/sprites/{spriteId}/sprite(@[1-2]x).(json|png)  // 获取符号库文件
+GET /api/sprites/{spriteId}/sprite(@2x).(json|png)      // 获取符号库文件
 ```
 
 ### 字体服务
