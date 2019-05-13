@@ -30,13 +30,10 @@ module.exports.getTilejson = (req, res, next) => {
       if (err) return next(err)
 
       const apiBaseUrl = `${req.protocol}://${req.headers.host}/api`
-      info.tiles = info.tiles
-        ? JSON.parse(info.tiles)
-        : [`${apiBaseUrl}/tilesets/${tilesetId}/{z}/{x}/{y}.${info.format}`]
-      info.scheme = 'xyz'
+      info.tiles = info.tiles || [
+        `${apiBaseUrl}/tilesets/${tilesetId}/{z}/{x}/{y}.${info.format}`
+      ]
       info.type = ['pbf', 'mvt'].includes(info.format) ? 'vector' : 'raster'
-      if (info.tileSize) info.tileSize = +info.tileSize
-      if (info.zoomOffset) info.zoomOffset = +info.zoomOffset
 
       res.json(info)
     })

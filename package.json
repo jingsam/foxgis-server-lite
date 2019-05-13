@@ -37,7 +37,7 @@
     ]
   },
   "dependencies": {
-    "@cgcs2000/mbtiles": "^0.10.3",
+    "@cgcs2000/mbtiles": "^0.11.0",
     "@mapbox/glyph-pbf-composite": "^0.0.3",
     "compression": "^1.6.2",
     "consolidate": "^0.15.1",
@@ -49,11 +49,11 @@
   "devDependencies": {
     "docsify-cli": "^4.2.1",
     "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "husky": "^1.0.1",
-    "lint-staged": "^8.0.4",
-    "pkg": "^4.3.1",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.6",
+    "pkg": "^4.4.0",
     "prettier": "^1.12.1",
     "prettier-eslint-cli": "^4.7.1",
     "supertest": "^4.0.2",
