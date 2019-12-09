@@ -9,9 +9,9 @@ module.exports.list = (req, res, next) => {
     if (err) return next(err)
 
     const promises = files.map(file => {
-      return new Promise((resolve, reject) => {
+      return new Promise(resolve => {
         fs.stat(path.join(fontsDir, file), (err, stats) => {
-          if (err || !stats.isDirectory()) return resolve(null)
+          if (err || !stats.isDirectory()) return resolve()
 
           resolve(file)
         })
@@ -37,7 +37,7 @@ module.exports.getGlyphs = (req, res, next) => {
   const glyphPaths = fontIds.map(fontId => `${fontsDir}/${fontId}/${start}-${end}.pbf`)
 
   const promises = glyphPaths.map(glyphPath => {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       fs.readFile(glyphPath, (err, buffer) => {
         if (err) return resolve()
 

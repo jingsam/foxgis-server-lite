@@ -1,10 +1,10 @@
 {
   "name": "foxgis-server-lite",
   "version": "2.0.0",
-  "private": true,
   "bin": "./bin/www",
   "scripts": {
     "start": "node ./bin/www",
+    "dev": "nodemon",
     "docs": "docsify serve ./docs --open",
     "test": "tape test/**/*.js",
     "lint": "eslint app/**/*.js",
@@ -26,37 +26,33 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "app/**/*.js": [
-        "prettier-eslint",
-        "git add"
-      ]
-    },
-    "ignore": [
-      "app/assets/**/*"
+    "{app,test}/**/*.js": [
+      "prettier-eslint --write",
+      "git add"
     ]
   },
   "dependencies": {
-    "@cgcs2000/mbtiles": "^0.11.0",
     "@mapbox/glyph-pbf-composite": "^0.0.3",
+    "@mapbox/mbtiles": "^0.11.0",
     "compression": "^1.6.2",
     "consolidate": "^0.15.1",
     "cors": "^2.8.1",
-    "ejs": "^2.6.1",
-    "express": "^4.16.2",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
     "morgan": "^1.8.2"
   },
   "devDependencies": {
-    "docsify-cli": "^4.2.1",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.2.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^2.2.0",
-    "lint-staged": "^8.1.6",
-    "pkg": "^4.4.0",
-    "prettier": "^1.12.1",
-    "prettier-eslint-cli": "^4.7.1",
+    "docsify-cli": "^4.4.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "nodemon": "^2.0.1",
+    "pkg": "^4.4.1",
+    "prettier": "^1.19.1",
+    "prettier-eslint-cli": "^5.0.0",
     "supertest": "^4.0.2",
-    "tape": "^4.10.1"
+    "tape": "^4.11.0"
   }
 }

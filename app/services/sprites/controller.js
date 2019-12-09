@@ -8,9 +8,9 @@ module.exports.list = (req, res, next) => {
     if (err) return next(err)
 
     const promises = files.map(file => {
-      return new Promise((resolve, reject) => {
+      return new Promise(resolve => {
         fs.stat(path.join(spritesDir, file), (err, stats) => {
-          if (err || !stats.isDirectory()) return resolve(null)
+          if (err || !stats.isDirectory()) return resolve()
 
           resolve(file)
         })

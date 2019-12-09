@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const MBTiles = require('@cgcs2000/mbtiles')
+const MBTiles = require('@mapbox/mbtiles')
 const consolidate = require('consolidate')
 
 module.exports.list = (req, res, next) => {
@@ -30,9 +30,7 @@ module.exports.getTilejson = (req, res, next) => {
       if (err) return next(err)
 
       const apiBaseUrl = `${req.protocol}://${req.headers.host}/api`
-      info.tiles = info.tiles || [
-        `${apiBaseUrl}/tilesets/${tilesetId}/{z}/{x}/{y}.${info.format}`
-      ]
+      info.tiles = info.tiles || [`${apiBaseUrl}/tilesets/${tilesetId}/{z}/{x}/{y}.${info.format}`]
       info.type = ['pbf', 'mvt'].includes(info.format) ? 'vector' : 'raster'
 
       res.json(info)
@@ -65,8 +63,7 @@ module.exports.getTile = (req, res, next) => {
       if (!data) return res.sendStatus(204)
 
       delete headers['ETag']
-      res.set(headers)
-      res.send(data)
+      res.set(headers).send(data)
     })
   })
 }

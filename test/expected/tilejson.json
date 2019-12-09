@@ -1,37 +1,33 @@
 {
-  "scheme": "xyz",
   "basename": "admin.mbtiles",
   "id": "admin",
-  "filesize": 520192,
+  "filesize": 397312,
   "name": "admin.mbtiles",
   "description": "admin.mbtiles",
   "version": "2",
-  "minzoom": 1,
-  "maxzoom": 3,
+  "minzoom": 0,
+  "maxzoom": 2,
   "center": [
-    22.5,
-    22.5,
-    3
+    45,
+    33.25663,
+    2
   ],
   "bounds": [
     -180,
-    -89.998926,
+    -85.051129,
     180,
     83.599609
   ],
   "type": "vector",
   "format": "pbf",
-  "generator": "tippecanoe v1.32.5",
-  "crs": "EPSG:4490",
-  "tile_origin_upper_left_x": "-180.0",
-  "tile_origin_upper_left_y": "90.0",
-  "tile_dimension_zoom_0": "360.0",
+  "generator": "tippecanoe v1.34.6",
+  "generator_options": "tippecanoe -o admin.mbtiles /Users/jingsam/data/ne_50m_admin_0_countries.geojson '--maximum-zoom=g' '--layer=admin'",
   "vector_layers": [
     {
       "id": "admin",
       "description": "",
-      "minzoom": 1,
-      "maxzoom": 3,
+      "minzoom": 0,
+      "maxzoom": 2,
       "fields": {
         "abbrev": "String",
         "abbrev_len": "Number",
@@ -3457,6 +3453,7 @@
       }
     ]
   },
+  "scheme": "xyz",
   "tiles": [
     "http://localhost:1234/api/tilesets/admin/{z}/{x}/{y}.pbf"
   ]
