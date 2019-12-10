@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/jingsam/foxgis-server-lite/workflows/Node%20CI/badge.svg)](https://github.com/jingsam/foxgis-server-lite/actions)
+
 # FoxGIS Server Lite
 
 > 一款简单易用的矢量瓦片地图服务软件。
