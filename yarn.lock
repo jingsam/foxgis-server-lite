@@ -30,27 +30,27 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@cgcs2000/mbtiles@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.npm.taobao.org/@cgcs2000/mbtiles/download/@cgcs2000/mbtiles-0.11.1.tgz#664b840fdd1b8ecfe2bf494f3896ae1d30e4efb9"
+  integrity sha1-ZkuED90bjs/iv0lPOJauHTDk77k=
+  dependencies:
+    "@cgcs2000/sphericalmercator" "~1.1.1"
+    "@mapbox/tiletype" "0.3.x"
+    d3-queue "~3.0.7"
+    sqlite3 "4.x"
+
+"@cgcs2000/sphericalmercator@~1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npm.taobao.org/@cgcs2000/sphericalmercator/download/@cgcs2000/sphericalmercator-1.1.1.tgz#b2be5dfc5055a3d7c2f707e44f8ffd562dcb651c"
+  integrity sha1-sr5d/FBVo9fC9wfkT4/9Vi3LZRw=
+
 "@mapbox/glyph-pbf-composite@^0.0.3":
   version "0.0.3"
   resolved "https://registry.npm.taobao.org/@mapbox/glyph-pbf-composite/download/@mapbox/glyph-pbf-composite-0.0.3.tgz#18966c54737abcfca40408352728bed24a0b3e12"
   integrity sha1-GJZsVHN6vPykBAg1Jyi+0koLPhI=
   dependencies:
     protocol-buffers "^2.4.7"
-
-"@mapbox/mbtiles@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.npm.taobao.org/@mapbox/mbtiles/download/@mapbox/mbtiles-0.11.0.tgz#c42eaea5457c76ae43cd7e448c5c9f11d81f4de3"
-  integrity sha1-xC6upUV8dq5DzX5EjFyfEdgfTeM=
-  dependencies:
-    "@mapbox/sphericalmercator" "~1.1.0"
-    "@mapbox/tiletype" "0.3.x"
-    d3-queue "~3.0.7"
-    sqlite3 "4.x"
-
-"@mapbox/sphericalmercator@~1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/@mapbox/sphericalmercator/download/@mapbox/sphericalmercator-1.1.0.tgz#f3b1af042620716a1289fc41e1e97f610823aefe"
-  integrity sha1-87GvBCYgcWoSifxB4el/YQgjrv4=
 
 "@mapbox/tiletype@0.3.x":
   version "0.3.1"

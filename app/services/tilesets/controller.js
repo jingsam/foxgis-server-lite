@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const MBTiles = require('@mapbox/mbtiles')
+const MBTiles = require('@cgcs2000/mbtiles')
 const consolidate = require('consolidate')
 
 module.exports.list = (req, res, next) => {

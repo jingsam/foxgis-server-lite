@@ -31,8 +31,8 @@
     ]
   },
   "dependencies": {
+    "@cgcs2000/mbtiles": "^0.11.1",
     "@mapbox/glyph-pbf-composite": "^0.0.3",
-    "@mapbox/mbtiles": "^0.11.0",
     "compression": "^1.6.2",
     "consolidate": "^0.15.1",
     "cors": "^2.8.1",

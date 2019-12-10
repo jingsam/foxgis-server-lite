@@ -53,7 +53,7 @@ GET /api/styles/{styleId}/html                  // 预览样式
 
 ### 地图瓦片服务
 
-?> 地图瓦片服务以瓦片集mbtiles的文件名作为`tilesetId`，地图瓦片集存储在`data/tilesets`目录下，在该目录下进行地图样式的新增、修改和删除操作。矢量瓦片集的生成，可以使用[tippecanoe](https://github.com/mapbox/tippecanoe)，该工具仅支持Linux和macOS。
+?> 地图瓦片服务以瓦片集mbtiles的文件名作为`tilesetId`，地图瓦片集存储在`data/tilesets`目录下，在该目录下进行地图样式的新增、修改和删除操作。矢量瓦片集的生成，可以使用[tippecanoe](https://github.com/cgcs2000/tippecanoe)，该工具仅支持Linux和macOS。
 
 ```
 GET /api/tilesets                                 // 获取瓦片集列表
