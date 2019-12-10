@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>FoxGIS Server Lite</title>
+  <script src="vendor/plugins/edit-on-github.js"></script>
   <link rel="stylesheet" href="vendor/themes/vue.css">
 </head>
 <body>
@@ -20,7 +21,10 @@
         paths: 'auto',
         placeholder: '搜索',
         noData: '找不到结果'
-      }
+      },
+      plugins: [
+        EditOnGithubPlugin.create('https://github.com/jingsam/foxgis-server-lite/blob/master/docs/', null, '编辑')
+      ]
     }
   </script>
   <script src="vendor/docsify.min.js"></script>

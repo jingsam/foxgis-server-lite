@@ -9,7 +9,7 @@
     "test": "tape test/**/*.js",
     "lint": "eslint app/**/*.js",
     "format": "prettier-eslint --write app/**/*.js",
-    "dist": "pkg . --out-path=dist/ --targets=macos"
+    "dist": "pkg . --out-path=dist/ --targets=win,linux,macos"
   },
   "engines": {
     "node": ">=8"
