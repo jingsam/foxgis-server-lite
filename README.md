@@ -4,7 +4,7 @@
 
 ## 使用文档
 
-请查看[帮助文档](https://jingsam.github.io/foxgis-server-lite/docs)
+请查看[帮助文档](https://jingsam.github.io/foxgis-server-lite/#/)
 
 
 ## 快速开始
