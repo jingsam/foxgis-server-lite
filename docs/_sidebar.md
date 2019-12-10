@@ -1,1 +1,8 @@
 - [概述](/README)
+- [安装部署](/deploy)
+- API
+  - [地图样式服务](/styles)
+  - [地图瓦片服务](/tilesets)
+  - [符号库服务](/sprites)
+  - [字体服务](/fonts)
+  - [静态资源服务](/assets)
