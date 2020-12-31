@@ -39,7 +39,7 @@ jobs:
           tar zcf foxgis-server-lite-macos.tar.gz foxgis-server-lite-macos
           mv foxgis-server-lite-win.tar.gz foxgis-server-lite-linux.tar.gz foxgis-server-lite-macos.tar.gz docs/
 
-      - uses: JamesIves/github-pages-deploy-action@3.5.8
+      - uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_BRANCH: master
