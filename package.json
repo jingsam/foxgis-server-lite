@@ -52,6 +52,6 @@
     "prettier": "^2.2.1",
     "prettier-eslint-cli": "^5.0.0",
     "supertest": "^6.0.1",
-    "tape": "^5.0.1"
+    "tape": "^5.1.1"
   }
 }
