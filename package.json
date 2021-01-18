@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "docsify-cli": "^4.4.2",
-    "eslint": "^7.17.0",
+    "eslint": "^7.18.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.3.1",
     "husky": "^4.3.7",
