@@ -1,0 +1,27 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "21:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 8.0.0
+    - 8.1.0
+    - 8.2.0
+  - dependency-name: eslint
+    versions:
+    - 7.21.0
+  - dependency-name: docsify
+    versions:
+    - 4.12.1
+  - dependency-name: tape
+    versions:
+    - 5.2.1
+  - dependency-name: husky
+    versions:
+    - 5.1.2
+    - 5.1.3
