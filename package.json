@@ -51,7 +51,7 @@
     "pkg": "^5.2.1",
     "prettier": "^2.3.0",
     "prettier-eslint-cli": "^5.0.1",
-    "supertest": "^6.1.3",
+    "supertest": "^6.1.4",
     "tape": "^5.2.2"
   }
 }
