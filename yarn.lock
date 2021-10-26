@@ -3465,10 +3465,10 @@ picomatch@^2.0.4, picomatch@^2.0.5, picomatch@^2.2.1:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"
   integrity sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==
 
-pkg-fetch@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/pkg-fetch/-/pkg-fetch-3.1.1.tgz#8f94115d926e71359ed96c211fe022b7a2452f8d"
-  integrity sha512-3GfpNwbwoTxge2TrVp6Oyz/FZJOoxF1r0+1YikOhnBXa2Di/VOJKtUObFHap76BFnyFo1fwh5vARWFR9TzLKUg==
+pkg-fetch@3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/pkg-fetch/-/pkg-fetch-3.2.3.tgz#9825febf4eadd470c126d3f6bdc2cb6996861d36"
+  integrity sha512-bv9vYANgAZ2Lvxn5Dsq7E0rLqzcqYkV4gnwe2f7oHV9N4SVMfDOIjjFCRuuTltop5EmsOcu7XkQpB5A/pIgC1g==
   dependencies:
     chalk "^4.1.0"
     fs-extra "^9.1.0"
@@ -3478,10 +3478,10 @@ pkg-fetch@3.1.1:
     semver "^7.3.5"
     yargs "^16.2.0"
 
-pkg@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/pkg/-/pkg-5.2.1.tgz#929294d2dedbcd4427cfc00121a80c151a2a1d4c"
-  integrity sha512-kQ5Fla+76rdmFJNrEOgoklxAURl3uvhvX+m4LCQCRrI+q2lOgsx9pS02NhNuDVnyXsthluAuXCh5SKcMyw+cWw==
+pkg@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/pkg/-/pkg-5.4.0.tgz#131a2e6d457a09df94efd8c036a04f235bd92569"
+  integrity sha512-OPLjbZ0NUwv7qlutITd9/2VI/4rtCdY5YeLsecj3qDz5hdL/pW55pnUWRCVcI04ZIXSC8YMVGN5+KJP+yKDwjQ==
   dependencies:
     "@babel/parser" "7.13.13"
     "@babel/types" "7.13.12"
@@ -3492,7 +3492,7 @@ pkg@^5.2.1:
     into-stream "^6.0.0"
     minimist "^1.2.5"
     multistream "^4.1.0"
-    pkg-fetch "3.1.1"
+    pkg-fetch "3.2.3"
     prebuild-install "6.0.1"
     progress "^2.0.3"
     resolve "^1.20.0"
