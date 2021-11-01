@@ -3,32 +3,26 @@
   "version": "2.0.0",
   "bin": "./bin/www",
   "scripts": {
+    "prepare": "husky install",
     "start": "node ./bin/www",
     "dev": "nodemon",
     "docs": "docsify serve ./docs --open",
     "test": "tape test/**/*.js",
     "lint": "eslint app/**/*.js",
     "format": "prettier-eslint --write app/**/*.js",
-    "dist": "pkg . --out-path=dist/ --targets=win,linux,macos"
+    "dist": "pkg . --out-path=dist/ --targets=host"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "pkg": {
     "assets": [
-      "node_modules/@mapbox/glyph-pbf-composite/proto/glyphs.proto"
+      "node_modules/@mapbox/glyph-pbf-composite/proto/glyphs.proto",
+      "node_modules/**/*.node"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
-    "{app,test}/**/*.js": [
-      "prettier-eslint --write",
-      "git add"
-    ]
+    "{app,test}/**/*.js": "prettier-eslint --write"
   },
   "dependencies": {
     "@mapbox/glyph-pbf-composite": "^0.0.3",
@@ -42,11 +36,11 @@
   },
   "devDependencies": {
     "docsify-cli": "^4.4.3",
-    "eslint": "^7.27.0",
+    "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^5.2.0",
-    "lint-staged": "^10.5.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
     "nodemon": "^2.0.7",
     "pkg": "^5.2.1",
     "prettier": "^2.3.0",
