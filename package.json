@@ -10,15 +10,14 @@
     "test": "tape test/**/*.js",
     "lint": "eslint app/**/*.js",
     "format": "prettier-eslint --write app/**/*.js",
-    "dist": "pkg . --out-path=dist/ --targets=host"
+    "dist": "pkg . --out-path=dist/ --targets=win,linux,macos --compress=GZip"
   },
   "engines": {
     "node": ">=12"
   },
   "pkg": {
     "assets": [
-      "node_modules/@mapbox/glyph-pbf-composite/proto/glyphs.proto",
-      "node_modules/**/*.node"
+      "node_modules/@mapbox/glyph-pbf-composite/proto/glyphs.proto"
     ]
   },
   "lint-staged": {
