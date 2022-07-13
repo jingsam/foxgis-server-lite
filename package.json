@@ -41,7 +41,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "nodemon": "^2.0.15",
-    "pkg": "^5.2.1",
+    "pkg": "^5.8.0",
     "prettier": "^2.3.0",
     "prettier-eslint-cli": "^5.0.1",
     "supertest": "^6.1.3",
